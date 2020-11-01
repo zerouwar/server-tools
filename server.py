@@ -1,3 +1,5 @@
+# coding=UTF-8
+
 import subprocess
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import urllib.parse as urlparse
