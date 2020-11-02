@@ -26,7 +26,8 @@ class MyServer(SimpleHTTPRequestHandler):
         res = subprocess.call(['wget', downloadUrl, '-O', '' + savePath + name])
 
         if (res == 0):
-            self.return_simple_message(200, "下载中，可能需要一点时间，完成后可点击此链接下载<a>http://ftp.chenhuanming.cn/" + name + "</a>")
+            self.return_simple_message(200,
+                                       "下载中，可能需要一点时间，完成后可点击<a href=\"http://ftp.chenhuanming.cn/" + name + "\">这里</a>下载")
         else:
             self.return_simple_message(400, "下载失败")
 
