@@ -4,7 +4,7 @@ import subprocess
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import urllib.parse as urlparse
 
-hostName = "localhost"
+hostName = "0.0.0.0"
 serverPort = 8080
 savePath = '/sftp/public/'
 
@@ -36,7 +36,7 @@ class MyServer(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes("<html><head><title>wget</title></head>", "utf-8"))
         self.wfile.write(bytes("<body>", "utf-8"))
-        self.wfile.write(bytes("<p>" + message + "</p>", "utf-8"))
+        self.wfile.write(bytes("<div>" + message + "</div>", "utf-8"))
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
 
